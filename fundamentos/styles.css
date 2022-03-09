@@ -1,0 +1,13 @@
+/* Cadena de importancia
+    1_inline styles ❌
+    2_important! ❌  --> Sobre escribir librerias de terceros
+    3_id ?
+    4_clases ✅
+    5_etiquetas ✅
+*/
+header{
+    background-color: aqua !important;
+}
+h1+a{
+
+}
