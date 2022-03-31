@@ -3,5 +3,46 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "ngxArkania": {
+      "projectType": "library",
+      "root": "projects/ngx-arkania",
+      "sourceRoot": "projects/ngx-arkania/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/ngx-arkania/tsconfig.lib.json",
+            "project": "projects/ngx-arkania/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-arkania/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-arkania/src/test.ts",
+            "tsConfig": "projects/ngx-arkania/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-arkania/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-arkania/tsconfig.lib.json",
+              "projects/ngx-arkania/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "ngxArkania"
 }
