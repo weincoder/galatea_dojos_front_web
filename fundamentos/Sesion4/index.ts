@@ -18,28 +18,29 @@ function checkNameLength(name: string) {
 const lilolaList = ["LiLoLaCamiOne💃🏻", "LiLoLaCamiTwo💃🏻", "LiLoLaCamiThree💃🏻", "LiLoLaCamiFour💃🏻", "LiLoLaCamiTwo💃🏻"]
 
 const output = doSomethingWhatIWant(lilolaList, checkNameLength);
-console.log(output);
+console.log('👾 imperative'+output);
 
+// ###### FUNCIONAL#######
+const dianitaList = ["LiLoLaCamiOne💃🏻", "LiLoLaCamiTwo💃🏻", "LiLoLaCamiThree💃🏻", "LiLoLaCamiFour💃🏻", "LiLoLaCamiTwo💃🏻"]
+const maxNameLength = 18;
+let defineMaxLength = (name:string) => name.length >= maxNameLength;
+let getNames = dianitaList.filter(defineMaxLength);
+console.log('declarative🥳'+getNames);
+let getNamesV2 = dianitaList.filter((z)=> z.length>18)
+// ##### some examples ####
+const ageInMonths = [1020,850,234,123,740,520];
+// age in years
+let getYearsFromMonths = (months: number) => Math.round(months/12);
+let ageInYears = ageInMonths.map(getYearsFromMonths);
+console.log('🐮' + ageInYears)
+// get young people
+let getYoungPeople = (age:number) => age <= 25;
+let youngPeople = ageInYears.filter(getYoungPeople);
+console.log('🕹' + youngPeople)
 
-// ##########################FUNTIONAL##########################################################################
-const camiList = ["LiLoLaCamiOne💃🏻", "LiLoLaCamiTwo💃🏻", "LiLoLaCamiThree💃🏻", "LiLoLaCamiFour💃🏻", "LiLoLaCamiTwo💃🏻"]
-const lineDesign = (lengthOfLine: number) => console.log(Array(lengthOfLine).join('#'));
-let defineMaxLength = (name: string) => name.length >=18;  
-const outputCami = camiList.filter(defineMaxLength);
-lineDesign(10);
-console.log('👩🏽‍💼'+outputCami);
-// ###################### Some examples#####
-let ageInMonthsList : number[] = [861,926,1000,234,453,1234,123]
-// get age in years
-let getYearsFromMonths = (months:number) => Math.round(months/12);
-let ageInYears = ageInMonthsList.map(getYearsFromMonths);
-lineDesign(10);
-console.log('🎶'+ ageInYears)
-// get younger people
-let getYoungPeople = (year:number) => year <= 25;
-let youngPeople = ageInYears.filter(getYoungPeople); 
-lineDesign(10);
-console.log('🕹'+ youngPeople);
-// age average
-let getAvaregaAges = (listOfAges : number []) => listOfAges.reduce((total, current)=> total +current) /listOfAges.length
-console.log(getAvaregaAges(ageInYears));
+//  average
+const addAges = (totalAges:number, currentAge:number) => currentAge + totalAges;
+const getAverageAges = (listOfAges: number[]) => 
+            listOfAges.reduce(addAges)/listOfAges.length;
+
+console.log(getAverageAges(ageInYears));
