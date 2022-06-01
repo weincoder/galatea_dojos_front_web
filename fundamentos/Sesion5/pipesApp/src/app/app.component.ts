@@ -1,7 +1,5 @@
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component } from '@angular/core';
-import { Observable, Observer, of } from 'rxjs';
-import { delay } from 'rxjs/operators';  
+import { Observable, Observer } from 'rxjs';
 
 @Component({
   selector: 'app-root',

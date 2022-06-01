@@ -11,17 +11,17 @@
   </div>
   <div class="bc-row space_4_top">
     <div class="bc-col-12 bc-offset-3">
-      <p>El cumpleanos de Diana es {{birthday}}</p>
+      <p>El cumpleaños de Diana es el {{birthday}}</p>
     </div>
   </div>
   <div class="bc-row space_4_top">
     <div class="bc-col-12 bc-offset-3">
-      <p>El cumpleanos de Diana es {{birthday | date }}</p>
+      <p>El cumpleaños de Diana es el {{birthday | date }}</p>
     </div>
   </div>
   <div class="bc-row space_4_top">
     <div class="bc-col-12 bc-offset-3">
-      <p>El cumpleanos de Diana es {{birthday | date:"MM/dd/yy" }}</p>
+      <p>El cumpleaños de Diana es el {{birthday | date:"dd/MM/yyyy" }}</p>
     </div>
   </div>
   <div class="bc-row space_4_top">
@@ -61,7 +61,7 @@
   </div>
   <div class="bc-row space_4_top">
     <div class="bc-col-12 bc-offset-3">
-      <p>Ese mani cuesta: {{price | currency:'INR' }}</p>
+      <p>Ese mani cuesta: {{price | currency }}</p>
     </div>
   </div>
   <div class="bc-row space_4_top">
@@ -121,7 +121,7 @@
   </div>
   <div class="bc-row space_4_top">
     <div class="bc-col-8 bc-offset-2">
-      <p>Fecha {{time  | async  | date:"MM/dd/yy HH:mm:ss"}}</p>
+      <p>Fecha {{ time | async | date:"MM/dd/yy HH:mm:ss" }}</p>
     </div>
   </div>
   <div class="bc-row space_4_top">
